@@ -14,6 +14,7 @@
 		<gwtBootstrap3.version>0.9.1</gwtBootstrap3.version>
 		<webappDirectory>${project.build.directory}/${project.build.finalName}</webappDirectory>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<jetty.version>9.2.10.v20150310</jetty.version>
 	</properties>
 
 	<dependencies>
@@ -62,9 +63,10 @@
 				</executions>
 				<!-- Plugin configuration. There are many available options, see gwt-maven-plugin documentation at codehaus.org -->
 				<configuration>
+					<useCache>false</useCache>
 					<runTarget>SampleWebApp.html</runTarget>
-					<hostedWebapp>${webappDirectory}</hostedWebapp>
-					<debugPort>8010</debugPort> <!--  default 8000 was already bind on my machine -->
+					<webappDirectory>src/main/webapp</webappDirectory>
+					<debugPort>8010</debugPort> <!-- default 8000 was already bind on my machine -->
 					<codeServerPort>9997</codeServerPort>
 				</configuration>
 			</plugin>
@@ -94,6 +96,11 @@
 					<source>1.7</source>
 					<target>1.7</target>
 				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.eclipse.jetty</groupId>
+				<artifactId>jetty-maven-plugin</artifactId>
+				<version>${jetty.version}</version>
 			</plugin>
 		</plugins>
 	</build>
