@@ -6,6 +6,7 @@ import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
+import com.google.gwt.user.client.DOM;
 import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.ui.Widget;
@@ -24,6 +25,8 @@ public class SampleWebApp extends Composite implements EntryPoint {
 
 	public void onModuleLoad() {
 		RootPanel.get().add(myUiBinder.createAndBindUi(this));
+		/*DOM.removeChild(RootPanel.getBodyElement(),
+				DOM.getElementById("loading"));*/
 		jumboHeader.setText("Hello World!");
 	}
 }

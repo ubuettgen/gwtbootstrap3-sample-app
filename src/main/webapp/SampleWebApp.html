@@ -1,9 +1,19 @@
 <!doctype html>
-<html>
+<html  manifest="SampleWebApp/appcache.manifest">
 <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Sample Web App</title>
+    <style type="text/css">
+    #loading {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    margin-left: -100px;
+}
+    </style>
     <script type="text/javascript" src="SampleWebApp/SampleWebApp.nocache.js"></script>
 </head>
 <body>
@@ -11,6 +21,11 @@
 <!-- OPTIONAL: include this if you want history support -->
 <iframe src="javascript:''" id="__gwt_historyFrame" tabIndex='-1'
         style="position:absolute;width:0;height:0;border:0"></iframe>
+<div id="loading">
+	<p>Loading...</p>
+	<img src="ajax_loader.gif"/>
+</div>
+
 
 <!-- RECOMMENDED if your web app will not function without JavaScript enabled -->
 <noscript>
